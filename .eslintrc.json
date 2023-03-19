@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "simple-import-sort"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -13,12 +13,98 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "",
+                "onlyDependOnLibsWithTags": []
+              },
+              {
+                "sourceTag": "type:utils",
+                "onlyDependOnLibsWithTags": ["type:const"]
+              },
+              {
+                "sourceTag": "type:utils",
+                "onlyDependOnLibsWithTags": ["feature:shared"]
+              },
+              {
+                "sourceTag": "type:component",
+                "onlyDependOnLibsWithTags": ["type:utils"]
+              },
+              {
+                "sourceTag": "type:component",
+                "onlyDependOnLibsWithTags": ["feature:shared"]
+              },
+              {
+                "sourceTag": "type:feature-shared",
+                "onlyDependOnLibsWithTags": ["type:utils", "type:component"]
+              },
+              {
+                "sourceTag": "type:feature-shared",
+                "onlyDependOnLibsWithTags": [
+                  "feature:dashboard",
+                  "feature:settings",
+                  "feature:quick-menu",
+                  "feature:app",
+                  "feature:shared"
+                ]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:utils",
+                  "type:component",
+                  "type:feature-shared"
+                ]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "feature:dashboard",
+                  "feature:settings",
+                  "feature:quick-menu",
+                  "feature:app",
+                  "feature:shared"
+                ]
+              },
+              {
+                "sourceTag": "type:app",
+                "onlyDependOnLibsWithTags": [
+                  "type:utils",
+                  "type:component",
+                  "type:feature"
+                ]
+              },
+              {
+                "sourceTag": "feature:shared",
+                "onlyDependOnLibsWithTags": ["feature:shared"]
+              },
+              {
+                "sourceTag": "feature:dashboard",
+                "onlyDependOnLibsWithTags": [
+                  "feature:dashboard",
+                  "feature:shared"
+                ]
+              },
+              {
+                "sourceTag": "feature:settings",
+                "onlyDependOnLibsWithTags": [
+                  "feature:settings",
+                  "feature:shared"
+                ]
+              },
+              {
+                "sourceTag": "feature:quick-menu",
+                "onlyDependOnLibsWithTags": [
+                  "feature:quick-menu",
+                  "feature:shared"
+                ]
+              },
+              {
+                "sourceTag": "feature:app",
+                "onlyDependOnLibsWithTags": ["feature:app", "feature:shared"]
               }
             ]
           }
-        ]
+        ],
+        "simple-import-sort/imports": "error"
       }
     },
     {

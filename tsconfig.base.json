@@ -14,7 +14,38 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@folder-structure-example-by-feature/feature/app-details": [
+        "libs/feature/app-details/src/index.ts"
+      ],
+      "@folder-structure-example-by-feature/feature/dashboard": [
+        "libs/feature/dashboard/src/index.ts"
+      ],
+      "@folder-structure-example-by-feature/feature/quick-menu": [
+        "libs/feature/quick-menu/src/index.ts"
+      ],
+      "@folder-structure-example-by-feature/feature/settings/details": [
+        "libs/feature/settings/details/src/index.ts"
+      ],
+      "@folder-structure-example-by-feature/feature/settings/list": [
+        "libs/feature/settings/list/src/index.ts"
+      ],
+      "@folder-structure-example-by-feature/feature/settings/shared": [
+        "libs/feature/settings/shared/src/index.ts"
+      ],
+      "@folder-structure-example-by-feature/shared/components/button": [
+        "libs/shared/components/button/src/index.ts"
+      ],
+      "@folder-structure-example-by-feature/shared/components/link": [
+        "libs/shared/components/link/src/index.ts"
+      ],
+      "@folder-structure-example-by-feature/shared/utils/auth": [
+        "libs/shared/utils/auth/src/index.ts"
+      ],
+      "@folder-structure-example-by-feature/shared/utils/routes": [
+        "libs/shared/utils/routes/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
